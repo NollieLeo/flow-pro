@@ -1,0 +1,36 @@
+$group-node-bg: rgba(0, 197, 185, 1);
+$group-node-shodow-bg: rgba(0, 197, 185, 0.5);
+$group-node-border-color: rgba(120, 255, 247, 1);
+$group-node-text-color: rgba(255, 255, 255, 0.8);
+
+.customGroupNode {
+  background: $group-node-bg;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 8px 12px;
+  transition: 0.25s ease-in;
+  border: 2px solid transparent;
+
+  .customGroupNodeHeader {
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .customGroupNodeMain {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 16px;
+    color: $group-node-text-color;
+  }
+  &:hover {
+    border: 2px solid $group-node-border-color;
+  }
+}
+.isSelected {
+  box-shadow: 0 0 10px $group-node-shodow-bg;
+  border: 2px solid $group-node-border-color;
+}

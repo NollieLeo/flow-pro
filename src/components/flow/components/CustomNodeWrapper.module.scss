@@ -1,0 +1,156 @@
+$draggingOverBorderColor: rgba(64, 129, 255, 1);
+
+:global(.react-flow__node) {
+  &:hover {
+    .nodeOperation {
+      opacity: 1;
+    }
+  }
+}
+
+.nodeOperation {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  margin: auto;
+  opacity: 0;
+  height: fit-content;
+  z-index: 2;
+}
+
+.addonBtnWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -34px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  &:has(> :first-child) {
+    &::before {
+      content: "";
+      width: 2px;
+      height: 8px;
+      display: block;
+      background: #484848;
+    }
+    &::after {
+      content: "";
+      background-color: #fff;
+      border: 2px solid;
+      border-radius: 50%;
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      top: -6px;
+      box-sizing: border-box;
+      border-color: #484848;
+    }
+  }
+}
+
+.addonBtnWrapperWithoutEdge {
+  bottom: 0;
+  &::after,
+  &::before {
+    display: none !important;
+  }
+}
+
+.customNodeWrapper {
+  position: relative;
+  width: fit-content;
+  min-height: 24px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2;
+
+  .wrapperContent {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  .batchNode {
+    display: none;
+  }
+  .addonBtn {
+    margin: 0 auto;
+  }
+
+  .addonBtnVisible {
+    opacity: 1;
+  }
+  .customHandle {
+    background-color: #fff;
+    border-width: 2px;
+    width: 6px;
+    height: 6px;
+    border-color: #484848;
+  }
+  .hidden {
+    visibility: hidden;
+  }
+  .top {
+    top: 0 !important;
+  }
+  .bottom {
+    bottom: -3px;
+  }
+}
+
+.isDraggingOver {
+  pointer-events: none;
+}
+
+.isNodeDragging {
+  filter: opacity(0.5);
+  pointer-events: none;
+}
+
+.draggingOverShadow {
+  background-color: rgba(64, 129, 255, 0.2);
+  height: calc(100% + 12px);
+  width: calc(100% + 12px);
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  border-radius: 16px;
+  border: 2px dashed $draggingOverBorderColor;
+}
+
+.draggingClonedNode {
+  z-index: 100;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  height: fit-content;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .draggingClonedNodeWrapper {
+    border-radius: 12px;
+    border: 2px solid;
+    border-color: #4081ff;
+  }
+  .draggingClonedNodeDivider {
+    height: 15px;
+    width: 2px;
+    background: #484848;
+  }
+  .draggingNodeChildNum {
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 50%;
+    font-size: 12px;
+    background: #484848;
+  }
+}

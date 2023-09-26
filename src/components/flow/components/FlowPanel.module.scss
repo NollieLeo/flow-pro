@@ -1,0 +1,48 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .flowPanel {
+    background: #252525;
+  }
+  .reactFlow {
+    .react-flow__pane {
+      cursor: default;
+    }
+  }
+  .controls {
+    display: flex;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    .button {
+      display: block;
+      height: 36px;
+      width: 36px;
+      color: #fff;
+      line-height: 36px;
+      text-align: center;
+      cursor: pointer;
+      background: #343434;
+    }
+    .zoomControls {
+      border-radius: 8px;
+      display: flex;
+      overflow: hidden;
+      width: 116px;
+      background: #343434;
+      .zoomText {
+        height: 36px;
+        line-height: 36px;
+        padding: 0 5px;
+        color: #fff;
+      }
+    }
+    .subControls {
+      margin-left: 10px;
+      .button {
+        border-radius: 8px;
+      }
+    }
+  }
+}

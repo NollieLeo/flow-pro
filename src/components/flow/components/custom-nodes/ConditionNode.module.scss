@@ -1,0 +1,45 @@
+$condition-node-color: rgba(79, 105, 223, 1);
+$condition-node-hover-bg: rgba(97, 120, 226, 0.3);
+$condition-node-success-color: rgba(0, 187, 120, 1);
+$condition-node-error-color: rgba(250, 64, 53, 1);
+
+.customConditionNode {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 100px;
+  padding: 4px 30px;
+  border: 2px solid $condition-node-color;
+  transition: 0.25s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .customConditionNodeLabel {
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: $condition-node-color;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-weight: 600;
+  }
+}
+
+.default.isSelected {
+  box-shadow: 0 0 10px $condition-node-hover-bg;
+  background-color: $condition-node-hover-bg;
+}
+
+.success {
+  border-color: $condition-node-success-color;
+  .customConditionNodeLabel {
+    color: $condition-node-success-color;
+  }
+}
+.error {
+  border-color: $condition-node-error-color;
+  .customConditionNodeLabel {
+    color: $condition-node-error-color;
+  }
+}

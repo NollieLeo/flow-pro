@@ -1,0 +1,27 @@
+.customStartNode {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  background: #484848;
+  .customStartNodeIcon {
+    margin-right: 8px;
+  }
+  .customStartNodeName {
+    max-width: 80%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-height: 18px;
+  }
+}
